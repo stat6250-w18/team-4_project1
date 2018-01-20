@@ -23,3 +23,21 @@ This file prepares the dataset described below for analysis.
 [Unique ID] The column "Respondent" is a primary key.The column Professional,Country,YearsProgram and DeveloperType form a composite key
 ,
 
+
+* environmental setup;
+
+* create output formats;
+proc format;
+    value YearsProgram_bins
+        2-5="Junior"
+        6-10="Senior"
+        11-15="Staff"
+        16-20="Manager"
+    ;
+    value Percent_Eligible_FRPM_K12_bins
+        NA-<3="Not Satisfied"
+        3-<6="Somewhat Satisfied"
+        6-<9="Quite Satisfied"
+        9-10="Happy"
+    ;
+run;
