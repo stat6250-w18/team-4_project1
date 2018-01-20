@@ -41,3 +41,45 @@ proc format;
         9-10="Happy"
     ;
 run;
+
+
+* setup environmental parameters;
+%let inputDatasetURL =
+https://www.kaggle.com//stackoverflow/so-survey-2017/downloads/survey_results_public.csv?raw=true
+;
+
+
+* load raw FRPM dataset over the wire;
+%macro loadDataIfNotAlreadyAvailable(dsn,url,filetype);
+    %put &=dsn;
+    %put &=url;
+    %put &=filetype;
+    %if
+        %sysfunc(exist(&dsn.)) = 0
+    %then
+        %do;
+            %put Loading dataset &dsn. over the wire now...;
+            filename tempfile "%sysfunc(getoption(work))/tempfile.xlsx";
+            proc http
+                method="get"
+                url="&url."
+                out=tempfile
+                ;
+            run;
+            proc import
+                file=tempfile
+                out=&dsn.
+                dbms=&filetype.;
+            run;
+            filename tempfile clear;
+        %end;
+    %else
+        %do;
+            %put Dataset &dsn. already exists. Please delete and try again.;
+        %end;
+%mend;
+%loadDataIfNotAlreadyAvailable(
+    FRPM1516_raw,
+    &inputDatasetURL.,
+    xls
+)
