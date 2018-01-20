@@ -6,9 +6,9 @@
 
 *
 This file uses the following analytic dataset to address several research
-questions regarding free/reduced-price meals at CA public K-12 schools
+questions regarding  lives of over 64,000 Stack Overflow developers
 
-Dataset Name: FRPM1516_analytic_file created in external file
+Dataset Name: survey_results_public created in external file
 STAT6250-01_w18-team-4_project1_data_preperation.sas, which is assumed to be
 in the same directory as this file
 
