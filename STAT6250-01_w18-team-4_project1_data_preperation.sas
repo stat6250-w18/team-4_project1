@@ -20,5 +20,6 @@ This file prepares the dataset described below for analysis.
 
 [Data Dictionary] https://www.kaggle.com//stackoverflow/so-survey-2017/downloads/survey_results_public.csv
 
-[Unique ID] The column "Respondent" is a primary key.
+[Unique ID] The column "Respondent" is a primary key.The column Professional,Country,YearsProgram and DeveloperType form a composite key
+,
 
