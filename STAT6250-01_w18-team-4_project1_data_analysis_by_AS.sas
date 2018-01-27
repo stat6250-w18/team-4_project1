@@ -27,11 +27,15 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 
 
 
-title1
-'Research Question: What are some of the important things in hiring"?'
-;
+*
+Research Question: What are the top 3 work start timings?
 
-title2
-'Rationale: This data would help both companies to hire the right candidate and candidates to focus on those skill sets.'
-;
+Rationale: This would help companies set general expectation eg:9am -5pm or 10am-6pm
+
+Methodology: use PROC SORT to sort the column WorkStart, and use PROC PRINT to print variables
+
+Limitations: It does not consider NA values.
+
+
+
 
