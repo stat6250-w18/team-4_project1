@@ -49,7 +49,7 @@ Use PROC PRINT to print the observations.
 
 Limitations: This methodology does not account for fields with missing [NA] values.
 
-Possible Follow-up Steps: Better handling of missing data.May be add a try /catch.
+Possible Follow-up Steps: Better handling of missing data.IF ELSE condition.
 ;
 
 
