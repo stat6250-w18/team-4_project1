@@ -8,7 +8,7 @@ This file uses the following analytic dataset to address several research
 questions regarding the lives of data scientists contributing to the Stack
 Overflow.
 
-Dataset Name: StackO_raw_analytic_file created in external file
+Dataset Name: StackO_analytic_file_analytic_file created in external file
 STAT6250-01_w18-team-4_project1_data_preparation.sas, which is assumed to be
 in the same directory as this file
 
@@ -29,43 +29,35 @@ title;
 footnote;
 
 title1
-'Research Question: What are the 5 most popular version control tools among the 
-Stack Overflow users?'
+'Research Question: What are the 5 most popular version control tools among the Stack Overflow users?'
 ;
 
 title2
-'Rationale: This should help identify the most important/in-demand version control 
-tools that programmers make use of and that new programmers should know in order to 
-succeed in their field.'
+'Rationale: This should help identify the most important/in-demand version control tools that programmers make use of and that new programmers should know in order to succeed in their field.'
 ;
 
 footnote1
-'Based on the below output, 5 version control tools have been identified, out of which 
-"git" is used the most.' 
+'Based on the below output, 5 version control tools have been identified, out of which "git" is used the most.' 
 ;
 
-footnote2
-'However, this is perhaps only a randomly selected sample of 3000 respondents out of 
-64000.'
+footnote3
+'However, this is perhaps only a randomly selected sample of 3000 respondents out of 64000.'
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the different 
-version control tools. And use PROC SORT procedure to get the top 5 version control 
+Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools. And use PROC SORT procedure to get the top 5 version control 
 tools.
 
-Limitations: Since the data is based on a survey, there were many fields that had NA 
-for an answer. Because of that, even NA is one of the top 5 results in thr SORT 
+Limitations: Since the data is based on a survey, there were many fields that had NA for an answer. Because of that, even NA is one of the top 5 results in thr SORT 
 procedure.
 
-Possible Follow-up Steps: More carefully clean the values of the variable
-Percent_Eligible_FRPM_K12 so that the means computed do not include any possible
-illegal values, and better handle missing data, e.g., by using a previous year's
-data or a rolling average of previous years' data as a proxy.'
+Possible Follow-up Steps: Perhaps applying analysis result on the whole dataset and then find the true results.
+Better handle the 'NA' values in the next survey.
 ;
 
+
 proc freq
-        data=FRPM1516_raw
+        data=StackO_analytic_file
     ;
     tables
         VersionControl / out=FreqCount  list
@@ -93,32 +85,27 @@ title1
 ;
 
 title2
-'Rationale: This would help to understand the popularity of Stack Overflow 
-among different professionals. And this information would help stack overflow 
-to know their audience in order to provide relevent advertisements to them.'
+'Rationale: This would help to understand the popularity of Stack Overflow among different professionals. And this information would help stack overflow to know their audience in order to provide relevent advertisements to them.'
 ;
 
 footnote1
-'Based on the below output, profesional developers tops the list, followed by 
-others.'
+'Based on the below output, profesional developers tops the list, followed by others.'
 ;
 
 footnote2
-'Moreover, there are a lot of 'NA' values, which hinders the results of the 
-analysis. And makes it difficult to take right business decisions.'
+'Moreover, there are a lot of 'NA' values, which hinders the results of the analysis. And makes it difficult to take right business decisions.'
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the professionals.
-And use PROC SORT procedure to get the frequencies in descending order.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the professionals.And use PROC SORT procedure to get the frequencies in descending order.
 
 Limitations: Since the data is based on a survey, there were limited options available. 
 
 
-Possible Follow-up Steps: 
+Possible Follow-up Steps: Cleaning the datset to avoid 'NA' values.
 ;
 proc freq
-        data=FRPM1516_raw
+        data=StackO_analytic_file
     ;
     table
         Professional / out=FreqCount  list
@@ -142,39 +129,32 @@ footnote;
 
 
 title1
-'Research Question: What are the top 5 ranges of years of programming experience 
-for the respondents?'
+'Research Question: What are the top 5 ranges of years of programming experience for the respondents?'
 ;
 
 title2
-'Rationale: This would help stack Overflow to know what is the experience level 
-of its audience. The result will help in posting relevent job opportunities to 
-the right audience.'
+'Rationale: This would help stack Overflow to know what is the experience level of its audience. The result will help in posting relevent job opportunities to the right audience.'
 ;
 
 footnote1
-'Based on the below output, professionals with more than 20 years of experience 
-contribute the most on stack overflow.'
+'Based on the below output, professionals with more than 20 years of experience contribute the most on stack overflow.'
 ;
 
 footnote2
-'However, the dataset represents only a small sample of the original data. 
-So results cannot be generalised 100% onto the whole data.'
+'However, the dataset represents only a small sample of the original data. So results cannot be generalised 100% onto the whole data.'
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the different 
-version control tools. And use PROC SORT procedure to get the top 5 version control tools.
-
-Limitations: Since the data is based on a survey, there were many fields that had 
-'NA' for an answer. Because of that, even 'NA' is one of the top 5 results in thr SO
+Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools. And use PROC SORT procedure to get the top 5 version control tools.
 
 
-Follow-up Steps: A possible follow-up to this approach could use an inferential
-statistical technique like beta regression.
+Limitations: Since the data is based on a survey, there were many fields that had 'NA' for an answer. Because of that, even 'NA' is one of the top 5 results in thr SO
+
+
+Follow-up Steps: A possible follow-up to this approach could be again to carefully avoid the 'NA' values.
 ;
 proc freq
-        data=FRPM1516_raw
+        data=StackO_analytic_file
     ;
     table
         YearsProgram / out=FreqCount  list
@@ -193,5 +173,3 @@ proc print
 	(obs=5)
 	;	
 run;
-title;
-footnote;

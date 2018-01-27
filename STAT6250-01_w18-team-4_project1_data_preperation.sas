@@ -62,15 +62,15 @@ https://github.com/stat6250/team-4_project1/blob/master/Stack%20Overflow%20refin
         %end;
 %mend;
 %loadDataIfNotAlreadyAvailable(
-    FRPM1516_raw,
+    StackO_raw,
     &inputDatasetURL.,
     xlsx
 )
 * check raw dataset for duplicates with respect to its primary key;
 proc sort
         nodupkey
-        data=FRPM1516_raw
-        dupout=FRPM1516_raw_dups
+        data=StackO_raw
+        dupout=StackO_raw_dups
         out=_null_
     ;
     by
@@ -88,33 +88,20 @@ proc format;
         16-20="Manager"
     ;
     value Percent_Eligible_FRPM_K12_bins
-		other='NA'
         low-<3="Not Satisfied"
         3-<6="Somewhat Satisfied"
         6-<9="Quite Satisfied"
         9-10="Happy"
+		other='NA'
     ;
 run;
 
-* build analytic dataset from FRPM dataset with the least number of columns and
+* build analytic dataset from StackO_raw dataset with the least number of columns(11)and
 minimal cleaning/transformation needed to address research questions in
 corresponding data-analysis files;
 
-data FRPM1516_analytic_file;
+data StackO_analytic_file;
     retain
-        Respondent
-		MajorUndergrad
-		FormalEducation
-		YearsProgramming
-		DeveloperType
-		Professional
-		Country
-		WorkStart
-		HaveworkedLanguage
-		VersionControl
-		Salary
-    ;
-    	keep
         Respondent
 		MajorUndergrad
 		FormalEducation
@@ -126,5 +113,19 @@ data FRPM1516_analytic_file;
 		HaveworkedLanguage
 		VersionControl
 		Salary
-    set FRPM1516_raw;
+    ;
+    keep
+        Respondent
+		MajorUndergrad
+		FormalEducation
+		YearsProgram
+		DeveloperType
+		Professional
+		Country
+		WorkStart
+		HaveworkedLanguage
+		VersionControl
+		Salary
+	;
+    set StackO_raw;
 run;
