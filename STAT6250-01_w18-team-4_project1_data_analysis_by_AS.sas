@@ -38,7 +38,7 @@ footnote1
 ;
 
 footnote1
-'Further we can see that Data Scientist is not common across the industry' 
+'Further we can see that Graphics Designer is the least common across the industry' 
 ;
 
 
@@ -53,3 +53,73 @@ Possible Follow-up Steps: Better handling of missing data.IF ELSE condition.
 ;
 
 
+proc freq
+        data=StackO_analytic_file
+    ;
+    tables
+        DeveloperType / out=FreqCount  list
+    ;
+run;
+proc sort
+    data=FreqCount
+	    out=FreqCount_Desc
+	;
+	by
+	    descending percent
+	;
+run;
+proc print
+    data=FreqCount_Desc 
+        (obs=3)
+	;
+run;
+title;
+footnote;
+
+title1
+'Research Question: What is the most likely reason for Job Satisfaction?'
+;
+
+title2
+'Rationale: This would help the companies identify the common reasons for job satisfaction.'
+;
+
+footnote1
+''
+;
+
+footnote2
+''
+;
+
+footnote3
+''
+;
+*
+Methodology: Use PROC FREQ to study Job Satisfaction metrics, and
+list them by reasons in data file.
+Limitations: Some fields have No values [NA] .Also this is subset of
+comprehensive 64,000 data set.
+Possible Follow-up Steps: Come up with predictive algorithm based on 
+analysis and also add IF/ELSE for missing condition.
+;
+
+
+proc freq
+	data=StackO_analytic_file order= freq;
+	table (
+		LearningNewTech
+		BoringDetails
+		JobSecurity
+		DiversityImportant
+		FriendsDevelopers
+		RightWrongWay
+		SeriousWork
+		ChallengeMyself
+		ImportantBenefits)
+	output out=reasons;
+run;
+title;
+footnote;
+
+*
