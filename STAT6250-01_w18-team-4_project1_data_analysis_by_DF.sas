@@ -52,7 +52,7 @@ Possible Follow-up Steps: More carefully clean the values of the variable
 ;
 proc print
         noobs
-        data=StackO_raw(obs=1)
+        data=StackO_analytic_file(obs=1)
     ;
     var
         Major Undergrad
