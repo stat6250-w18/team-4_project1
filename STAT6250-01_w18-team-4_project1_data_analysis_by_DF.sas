@@ -133,7 +133,7 @@ Possible Follow-up Steps: More restricts
 proc freq
 proc print
         noobs
-        data=FRPM1516_analytic_temp(obs=1)
+        data=StackO_analytic_file(obs=1)
     class
         EmploymentStatus
     ;
