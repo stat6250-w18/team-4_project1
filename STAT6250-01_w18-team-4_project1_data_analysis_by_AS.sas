@@ -76,50 +76,100 @@ run;
 title;
 footnote;
 
+
 title1
-'Research Question: What is the most likely reason for Job Satisfaction?'
+'Research Question: Which country are the maximumnumber of stack overflow users from ?'
 ;
 
 title2
-'Rationale: This would help the companies identify the common reasons for job satisfaction.'
+'Rationale: This should help identify the users from the countries that have surveyed.'
 ;
 
 footnote1
-''
-;
-
-footnote2
-''
+'US has the maximum number of respondents followed by UK.' 
 ;
 
 footnote3
-''
-;
-*
-Methodology: Use PROC FREQ to study Job Satisfaction metrics, and
-list them by reasons in data file.
-Limitations: Some fields have No values [NA] .Also this is subset of
-comprehensive 64,000 data set.
-Possible Follow-up Steps: Come up with predictive algorithm based on 
-analysis and also add IF/ELSE for missing condition.
+'Data is a subset [3000] of 64000.'
 ;
 
+*
+Methodology: Use PROC FREQ procedure to generate frequency table for the different countries.
+
+Limitations: Since we have used limited data set 3000 of 64000 results may not be accurate.
+
+Possible Follow-up Steps: Bump up the data set and compare with historical data .
+;
 
 proc freq
-	data=StackO_analytic_file order= freq;
-	table (
-		LearningNewTech
-		BoringDetails
-		JobSecurity
-		DiversityImportant
-		FriendsDevelopers
-		RightWrongWay
-		SeriousWork
-		ChallengeMyself
-		ImportantBenefits)
-	output out=reasons;
+        data=StackO_analytic_file
+    ;
+    tables
+        Country / out=FreqCount  list
+    ;
+run;
+proc sort
+    data=FreqCount
+	    out=FreqCount_Desc
+	;
+	by
+	    descending Country
+	;
+run;
+proc print
+    data=FreqCount_Desc 
+        (obs=5)
+	;
 run;
 title;
 footnote;
 
+
+
+title1
+'Research Question: How many users have Bachelors,Masters and Doctoral as FormalEducation ?'
+;
+
+title2
+'Rationale: This should help identify the users who have completed 4+ years of college.'
+;
+
+footnote1
+'There are 1359 users with Bachelors degree followed by 560 Masters and 70 Doctorates.' 
+;
+
+footnote3
+'Data is a subset [3000] of 64000.'
+;
+
 *
+Methodology: Use PROC FREQ procedure to generate frequency table for the different FormalEducation Types.
+Use PROC PRINT to print the data
+
+Limitations: Since we have used limited data set 3000 of 64000 results may not be accurate.
+
+Possible Follow-up Steps: Bump up the data set and compare with historical data .
+;
+
+proc freq
+        data=StackO_analytic_file
+    ;
+    tables
+        FormalEducation / out=FreqCount  list
+    ;
+run;
+proc sort
+    data=FreqCount
+	    out=FreqCount_Desc
+	;
+	by
+	    descending FormalEducation
+	;
+run;
+proc print
+    data=FreqCount_Desc 
+        (obs=10)
+	;
+run;
+title;
+footnote;
