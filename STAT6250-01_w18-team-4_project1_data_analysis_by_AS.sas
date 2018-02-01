@@ -39,7 +39,7 @@ footnote1
 'Web Developer is the common developertype being seen across the industry' 
 ;
 
-footnote1
+footnote2
 'Further we can see that Graphics Designer is the least common across the industry' 
 ;
 
@@ -92,7 +92,7 @@ footnote1
 'US has the maximum number of respondents followed by UK.' 
 ;
 
-footnote3
+footnote2
 'Data is a subset [3000] of 64000.'
 ;
 
@@ -143,7 +143,7 @@ footnote1
 'There are 1359 users with Bachelors degree followed by 560 Masters and 70 Doctorates.' 
 ;
 
-footnote3
+footnote2
 'Data is a subset [3000] of 64000.'
 ;
 
