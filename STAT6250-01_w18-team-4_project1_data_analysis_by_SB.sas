@@ -26,6 +26,7 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 %include '.\STAT6250-01_w18-team-4_project1_data_preparation.sas';
 
 
+
 title1
 'Research Question: What are the 5 most popular version control tools among the Stack Overflow users?'
 ;
@@ -43,16 +44,15 @@ footnote3
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools. And use PROC SORT procedure to get the top 5 version control 
-tools.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools.
+And use PROC SORT procedure to get the top 5 version control tools.
 
-Limitations: Since the data is based on a survey, there were many fields that had NA for an answer. Because of that, even NA is one of the top 5 results in thr SORT 
-procedure.
+Limitations: Since the data is based on a survey, there were many fields that had NA for an answer.
+Because of that, even NA is one of the top 5 results in thr SORT procedure.
 
 Possible Follow-up Steps: Perhaps applying analysis result on the whole dataset and then find the true results.
 Better handle the 'NA' values in the next survey.
 ;
-
 
 proc freq
         data=StackO_analytic_file
@@ -61,6 +61,7 @@ proc freq
         VersionControl / out=FreqCount  list
     ;
 run;
+
 proc sort
     data=FreqCount
 	    out=FreqCount_Desc
@@ -69,6 +70,7 @@ proc sort
 	    descending percent
 	;
 run;
+
 proc print
     data=FreqCount_Desc 
         (obs=5)
@@ -76,6 +78,7 @@ proc print
 run;
 title;
 footnote;
+
 
 
 title1
@@ -95,13 +98,14 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the professionals.And use PROC SORT procedure to get the frequencies in descending order.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the professionals. 
+And use PROC SORT procedure to get the frequencies in descending order.
 
 Limitations: Since the data is based on a survey, there were limited options available. 
 
-
 Possible Follow-up Steps: Cleaning the datset to avoid 'NA' values.
 ;
+
 proc freq
         data=StackO_analytic_file
     ;
@@ -109,6 +113,7 @@ proc freq
         Professional / out=FreqCount  list
     ;
 run;
+
 proc sort
     data=FreqCount
 	    out=FreqCount_Desc
@@ -117,6 +122,7 @@ proc sort
 	    descending percent
 	;
 run;
+
 proc print
     data=FreqCount_Desc
 	;
@@ -143,14 +149,15 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools. And use PROC SORT procedure to get the top 5 version control tools.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools.
+And use PROC SORT procedure to get the top 5 version control tools.
 
-
-Limitations: Since the data is based on a survey, there were many fields that had 'NA' for an answer. Because of that, even 'NA' is one of the top 5 results in thr SO
-
+Limitations: Since the data is based on a survey, there were many fields that had 'NA' for an answer.
+Because of that, even 'NA' is one of the top 5 results in thr SO
 
 Follow-up Steps: A possible follow-up to this approach could be again to carefully avoid the 'NA' values.
 ;
+
 proc freq
         data=StackO_analytic_file
     ;
@@ -158,6 +165,7 @@ proc freq
         YearsProgram / out=FreqCount  list
     ;
 run;
+
 proc sort
     data=FreqCount
 	    out=FreqCount_Desc
@@ -166,8 +174,11 @@ proc sort
 	    descending percent
 	;
 run;
+
 proc print
     data=FreqCount_Desc
 	(obs=5)
 	;	
 run;
+title;
+footnote;
