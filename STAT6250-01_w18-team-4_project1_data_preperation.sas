@@ -8,15 +8,18 @@ This file prepares the dataset described below for analysis.
 
 [Dataset Name] Stack Overflow Developer Survey, 2017
 
-[Experimental Units] A look into the lives of over 64,000 Stack Overflow developers
+[Experimental Units] A look into the lives of over 64,000 Stack Overflow 
+developers
 
-[Number of Observations] Originally had 51,393 obs, but for the sake of file size limit, few columns and all observations but 3000 were deleted.
+[Number of Observations] Originally had 51,393 obs, but for the sake of file size 
+limit, few columns and all observations but 3000 were deleted.
 
 [Number of Features] 143
 
 [Data Source] https://www.kaggle.com/stackoverflow/so-survey-2017/data.
-The original dataset based on the survey has been edited as it was too large for the max file size accepted on github.
-The edit has been made by deleting all obseravtions but 3000.
+The original dataset based on the survey has been edited as it was too large 
+for the max file size accepted on github.The edit has been made by deleting all 
+obseravtions but 3000.
 
 [Data Dictionary] https://www.kaggle.com//stackoverflow/so-survey-2017/downloads/survey_results_public.csv
 
@@ -99,12 +102,13 @@ proc sort
 run;
 
 
-* build analytic dataset from StackO_raw dataset with the least number of columns(11)and
-minimal cleaning/transformation needed to address research questions in
-corresponding data-analysis files;
+* build analytic dataset from StackO_raw dataset with the least number of 
+columns(11)and minimal cleaning/transformation needed to address research 
+questions in corresponding data-analysis files;
+
 data StackO_analytic_file;
     retain
-        Respondent
+        	Respondent
 		MajorUndergrad
 		FormalEducation
 		YearsProgram
@@ -117,7 +121,7 @@ data StackO_analytic_file;
 		Salary
     ;
     keep
-        Respondent
+       		Respondent
 		MajorUndergrad
 		FormalEducation
 		YearsProgram
