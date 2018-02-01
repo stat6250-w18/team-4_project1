@@ -64,7 +64,7 @@ proc freq
 run;
 
 proc sort
-    data=FreqCount
+    	data=FreqCount
 	    out=FreqCount_Desc
 	;
 	by
