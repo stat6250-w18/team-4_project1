@@ -65,7 +65,7 @@ run;
 
 proc sort
     	data=FreqCount
-		out=FreqCount_Desc
+	out=FreqCount_Desc
 	;
 	by
 		descending percent
@@ -118,7 +118,7 @@ run;
 
 proc sort
 	data=FreqCount
-		out=FreqCount_Desc
+	out=FreqCount_Desc
 	;
 	by
 		descending percent
@@ -173,7 +173,7 @@ run;
 
 proc sort
 	data=FreqCount
-		out=FreqCount_Desc
+	out=FreqCount_Desc
 	;
 	by
 		descending percent
