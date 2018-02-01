@@ -5,10 +5,12 @@
 
 *
 This file uses the following analytic dataset to address several research
-questions regarding A look into the lives of over 64,000 Stack Overflow developers
+questions regarding A look into the lives of over 64,000 Stack Overflow developers.
+
 Dataset Name: Stack Overflow Developer Survey, 2017
 STAT6250-01_w18-team-4_project1_data_preperation.sas, which is assumed to be
 in the same directory as this file
+
 See included file for dataset properties
 ;
 
@@ -42,14 +44,17 @@ footnote2
 footnote3
 'Further analysis to look for the top 1 formal education level in the respondences who coming from United States'
 ;
+
 *
 Methodology: Use PROC PRINT to print just the top country from
 the temporary dataset created in the corresponding data-prep file.
+
 Limitations: This methodology can result the only one country. The purpose for the 
 research is not very useful and represtful.
-Possible Follow-up Steps: More carefully clean the values of the variable
 
+Possible Follow-up Steps: More carefully clean the values of the variable.
 ;
+
 proc print
         noobs
         data=StackO_analytic_file(obs=1)
@@ -75,7 +80,7 @@ title2
 ;
 
 footnote1
-'Based on the above output, top 2 eduation level are "Bachelar" and "some college/university study without earning a bachelor's degree." which are 694 and 272 persons'
+'Based on the above output, top 2 eduation level are "Bachelor" and "some college/university study without earning a bachelor's degree." which are 694 and 272 persons.'
 ;
 
 footnote2
@@ -83,17 +88,19 @@ footnote2
 ;
 
 footnote3
-"In addition, we should see the employment status who have a special degree and from a special region."
+'In addition, we should see the employment status who have a special degree and from a special region.'
 ;
 
 *
 Methodology: Use PROC PRINT to print just the most education level from
 the temporary dataset created in the corresponding data-prep file.
+
 Limitations: This methodology only result respondents' education level. The purpose for the 
 research should be considered the employed status as well.
-Possible Follow-up Steps: More restricts
 
+Possible Follow-up Steps: More restricts
 ;
+
 proc print
         noobs
         data=StackO_analytic_file(obs=1)
@@ -111,7 +118,7 @@ footnote;
 
 
 title1
-'Research Question: what's the most employment status who have bachelar degree already and from USA ?'
+'Research Question: what's the most employment status who have bachelar degree already and from USA?'
 ;
 
 title2
@@ -119,17 +126,21 @@ title2
 ;
 
 footnote1
-"Based on the above output, 543 records shows that they are full-time employed"
+'Based on the above output, 543 records shows that they are full-time employed.'
 ;
 
 footnote2
-' Finally, this survey can help us to identify the respondents educaion and employment status.'
+'Finally, this survey can help us to identify the respondents educaion and employment status.'
 ;
+
 *
 Methodology: Use PROC PRINT to print just the most employment status base on the corresponding temp file.
+
 Limitations: This methodology still can result a lot of redundent.
+
 Possible Follow-up Steps: More restricts
 ;
+
 proc freq
 proc print
         noobs
@@ -144,6 +155,3 @@ proc print
 run;
 title;
 footnote;
-
-
-
