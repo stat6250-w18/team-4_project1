@@ -26,7 +26,7 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 
 
 title1
-'Research Question: What are the top 1 country from where the respondents contributing on stack of flow "?'
+'Research Question: What is the top 1 country from where the respondents contributing on stack of flow?'
 ;
 
 title2
@@ -61,9 +61,8 @@ proc print
     ;
     var
         Major Undergrad
-	;
+    ;
 	Where Country="United States"
-
     ;
 run;
 title;
@@ -80,7 +79,7 @@ title2
 ;
 
 footnote1
-'Based on the above output, top 2 eduation level are "Bachelor" and "some college/university study without earning a bachelor's degree." which are 694 and 272 persons.'
+'Based on the above output, top 2 eduation level are "Bachelor" and "some college/university study without earning a bachelor's degree", which are 694 and 272 persons.'
 ;
 
 footnote2
@@ -109,8 +108,7 @@ proc print
     ;
     var
         Country
-		
-    ;
+	;
 run;
 title;
 footnote;
