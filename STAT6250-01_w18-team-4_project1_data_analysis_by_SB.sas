@@ -18,8 +18,7 @@ See included file for dataset properties
 * environmental setup;
 
 * set relative file import path to current directory (using standard SAS trick);
-X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPATH))
--%length(%sysget(SAS_EXECFILENAME))))""";
+X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPATH))-%length(%sysget(SAS_EXECFILENAME))))""";
 
 
 * load external file that generates analytic dataset FRPM1516_analytic_file;
@@ -44,14 +43,16 @@ footnote3
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools.
-And use PROC SORT procedure to get the top 5 version control tools.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the 
+different version control tools.And use PROC SORT procedure to get the top 5 
+version control tools.
 
-Limitations: Since the data is based on a survey, there were many fields that had NA for an answer.
-Because of that, even NA is one of the top 5 results in thr SORT procedure.
+Limitations: Since the data is based on a survey, there were many fields that 
+had NA for an answer. Because of that, even NA is one of the top 5 results in 
+the SORT procedure.
 
-Possible Follow-up Steps: Perhaps applying analysis result on the whole dataset and then find the true results.
-Better handle the 'NA' values in the next survey.
+Possible Follow-up Steps: Perhaps applying analysis result on the whole dataset 
+and then find the true results. Better handle the 'NA' values in the next survey.
 ;
 
 proc freq
@@ -98,10 +99,12 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the professionals. 
-And use PROC SORT procedure to get the frequencies in descending order.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the
+professionals. And use PROC SORT procedure to get the frequencies in 
+descending order.
 
-Limitations: Since the data is based on a survey, there were limited options available. 
+Limitations: Since the data is based on a survey, there were limited options
+available. 
 
 Possible Follow-up Steps: Cleaning the datset to avoid 'NA' values.
 ;
@@ -149,13 +152,16 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the different version control tools.
-And use PROC SORT procedure to get the top 5 version control tools.
+Methodology: Use PROC FREQ procedure to generate a frequency table for the 
+different version control tools. And use PROC SORT procedure to get the top
+5 version control tools.
 
-Limitations: Since the data is based on a survey, there were many fields that had 'NA' for an answer.
-Because of that, even 'NA' is one of the top 5 results in thr SO
+Limitations: Since the data is based on a survey, there were many fields 
+that had 'NA' for an answer. Because of that, even 'NA' is one of the top
+5 results in the result.
 
-Follow-up Steps: A possible follow-up to this approach could be again to carefully avoid the 'NA' values.
+Follow-up Steps: A possible follow-up to this approach could be again to 
+carefully avoid the 'NA' values.
 ;
 
 proc freq
