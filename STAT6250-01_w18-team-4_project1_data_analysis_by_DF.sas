@@ -95,8 +95,9 @@ footnote3
 Methodology: Use PROC PRINT to print just the most education level from
 the temporary dataset created in the corresponding data-prep file.
 
-Limitations: This methodology only result respondents' education level. The purpose for the 
-research should be considered the employed status as well.
+Limitations: This methodology only result respondents' education level.
+The purpose for the research should be considered the employed status 
+as well.
 
 Possible Follow-up Steps: More restricts
 ;
@@ -133,7 +134,8 @@ footnote2
 ;
 
 *
-Methodology: Use PROC PRINT to print just the most employment status base on the corresponding temp file.
+Methodology: Use PROC PRINT to print just the most employment status base on
+the corresponding temp file.
 
 Limitations: This methodology still can result a lot of redundent.
 
