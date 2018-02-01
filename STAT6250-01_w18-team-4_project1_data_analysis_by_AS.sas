@@ -48,7 +48,8 @@ Methodology: Use PROC FREQ procedure to generate a frequency table .
 Use PROC SORT to sort the column DeveloperType.
 Use PROC PRINT to print the observations.
 
-Limitations: This methodology does not account for fields with missing [NA] values.
+Limitations: This methodology does not account for fields with missing 
+[NA] values.
 
 Possible Follow-up Steps: Better handling of missing data.IF ELSE condition.
 ;
@@ -97,11 +98,13 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate frequency table for the different countries.
+Methodology: Use PROC FREQ procedure to generate frequency table for the different 
+countries.
 
-Limitations: Since we have used limited data set 3000 of 64000 results may not be accurate.
+Limitations: Since we have used limited data set 3000 of 64000 results may not be 
+accurate.
 
-Possible Follow-up Steps: Bump up the data set and compare with historical data .
+Possible Follow-up Steps: Bump up the data set and compare with historical data.
 ;
 
 proc freq
@@ -148,10 +151,12 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate frequency table for the different FormalEducation Types.
+Methodology: Use PROC FREQ procedure to generate frequency table for the different 
+FormalEducation Types.
 Use PROC PRINT to print the data
 
-Limitations: Since we have used limited data set 3000 of 64000 results may not be accurate.
+Limitations: Since we have used limited data set 3000 of 64000 results may not 
+be accurate.
 
 Possible Follow-up Steps: Bump up the data set and compare with historical data .
 ;
