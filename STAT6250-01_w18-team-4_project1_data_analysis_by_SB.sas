@@ -65,16 +65,15 @@ run;
 
 proc sort
     	data=FreqCount
-	    out=FreqCount_Desc
+		out=FreqCount_Desc
 	;
 	by
-	    descending percent
+		descending percent
 	;
 run;
 
 proc print
-    data=FreqCount_Desc 
-        (obs=5)
+    data=FreqCount_Desc (obs=5)
 	;
 run;
 title;
@@ -113,21 +112,21 @@ proc freq
         data=StackO_analytic_file
     ;
     table
-        Professional / out=FreqCount  list
+    	Professional / out=FreqCount  list
     ;
 run;
 
 proc sort
-    data=FreqCount
-	    out=FreqCount_Desc
+	data=FreqCount
+		out=FreqCount_Desc
 	;
 	by
-	    descending percent
+		descending percent
 	;
 run;
 
 proc print
-    data=FreqCount_Desc
+	data=FreqCount_Desc
 	;
 run;
 title;
@@ -168,22 +167,21 @@ proc freq
         data=StackO_analytic_file
     ;
     table
-        YearsProgram / out=FreqCount  list
+    	YearsProgram / out=FreqCount  list
     ;
 run;
 
 proc sort
-    data=FreqCount
-	    out=FreqCount_Desc
+	data=FreqCount
+		out=FreqCount_Desc
 	;
 	by
-	    descending percent
+		descending percent
 	;
 run;
 
 proc print
-    data=FreqCount_Desc
-	(obs=5)
+	data=FreqCount_Desc (obs=5)
 	;	
 run;
 title;
