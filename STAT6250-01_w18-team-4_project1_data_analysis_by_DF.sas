@@ -5,7 +5,8 @@
 
 *
 This file uses the following analytic dataset to address several research
-questions regarding A look into the lives of over 64,000 Stack Overflow developers.
+questions regarding A look into the lives of over 64,000 Stack Overflow
+developers.
 
 Dataset Name: Stack Overflow Developer Survey, 2017
 STAT6250-01_w18-team-4_project1_data_preperation.sas, which is assumed to be
@@ -49,8 +50,8 @@ footnote3
 Methodology: Use PROC PRINT to print just the top country from
 the temporary dataset created in the corresponding data-prep file.
 
-Limitations: This methodology can result the only one country. The purpose for the 
-research is not very useful and represtful.
+Limitations: This methodology can result the only one country. The purpose for
+the research is not very useful and represtful.
 
 Possible Follow-up Steps: More carefully clean the values of the variable.
 ;
@@ -79,7 +80,7 @@ title2
 ;
 
 footnote1
-'Based on the above output, top 2 eduation level are "Bachelor" and "some college/university study without earning a bachelor's degree", which are 694 and 272 persons.'
+'Based on the above output, top 2 eduation level are "Bachelor" and "some college/university study without earning a bachelors degree", which are 694 and 272 persons.'
 ;
 
 footnote2
