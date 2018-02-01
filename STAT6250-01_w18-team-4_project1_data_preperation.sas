@@ -11,8 +11,8 @@ This file prepares the dataset described below for analysis.
 [Experimental Units] A look into the lives of over 64,000 Stack Overflow 
 developers
 
-[Number of Observations] Originally had 51,393 obs, but for the sake of file size 
-limit, few columns and all observations but 3000 were deleted.
+[Number of Observations] Originally had 51,393 obs, but for the sake of file
+size limit, few columns and all observations but 3000 were deleted.
 
 [Number of Features] 143
 
