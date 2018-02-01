@@ -25,6 +25,8 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 * load external file that generates analytic dataset FRPM1516_analytic_file;
 %include '.\STAT6250-01_w18-team-4_project1_data_preparation.sas';
 
+
+
 title1
 'Research Question: What are the top 3 DeveloperType among StackOverflow Users?'
 ;
@@ -41,7 +43,6 @@ footnote1
 'Further we can see that Graphics Designer is the least common across the industry' 
 ;
 
-
 *
 Methodology: Use PROC FREQ procedure to generate a frequency table . 
 Use PROC SORT to sort the column DeveloperType.
@@ -52,7 +53,6 @@ Limitations: This methodology does not account for fields with missing [NA] valu
 Possible Follow-up Steps: Better handling of missing data.IF ELSE condition.
 ;
 
-
 proc freq
         data=StackO_analytic_file
     ;
@@ -60,6 +60,7 @@ proc freq
         DeveloperType / out=FreqCount  list
     ;
 run;
+
 proc sort
     data=FreqCount
 	    out=FreqCount_Desc
@@ -68,6 +69,7 @@ proc sort
 	    descending percent
 	;
 run;
+
 proc print
     data=FreqCount_Desc 
         (obs=3)
@@ -75,6 +77,7 @@ proc print
 run;
 title;
 footnote;
+
 
 
 title1
@@ -108,6 +111,7 @@ proc freq
         Country / out=FreqCount  list
     ;
 run;
+
 proc sort
     data=FreqCount
 	    out=FreqCount_Desc
@@ -116,6 +120,7 @@ proc sort
 	    descending Country
 	;
 run;
+
 proc print
     data=FreqCount_Desc 
         (obs=5)
@@ -158,6 +163,7 @@ proc freq
         FormalEducation / out=FreqCount  list
     ;
 run;
+
 proc sort
     data=FreqCount
 	    out=FreqCount_Desc
@@ -166,6 +172,7 @@ proc sort
 	    descending FormalEducation
 	;
 run;
+
 proc print
     data=FreqCount_Desc 
         (obs=10)
@@ -173,5 +180,3 @@ proc print
 run;
 title;
 footnote;
-
-
