@@ -44,9 +44,7 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table . 
-Use PROC SORT to sort the column DeveloperType.
-Use PROC PRINT to print the observations.
+Methodology:Use PROC PRINT to print the 3 observations.
 
 Limitations: This methodology does not account for fields with missing 
 [NA] values.
@@ -54,25 +52,8 @@ Limitations: This methodology does not account for fields with missing
 Possible Follow-up Steps: Better handling of missing data.IF ELSE condition.
 ;
 
-proc freq
-        data=StackO_analytic_file
-    ;
-    tables
-        DeveloperType / out=FreqCount  list
-    ;
-run;
-
-proc sort
-    data=FreqCount
-	    out=FreqCount_Desc
-	;
-	by
-	    descending percent
-	;
-run;
-
 proc print
-    data=FreqCount_Desc 
+    data=FreqDevCount_Desc 
         (obs=3)
 	;
 run;
@@ -98,8 +79,7 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate frequency table for the different 
-countries.
+Methodology: Use PROC PRINT to print the 5 observations.
 
 Limitations: Since we have used limited data set 3000 of 64000 results may not be 
 accurate.
@@ -107,25 +87,8 @@ accurate.
 Possible Follow-up Steps: Bump up the data set and compare with historical data.
 ;
 
-proc freq
-        data=StackO_analytic_file
-    ;
-    tables
-        Country / out=FreqCount  list
-    ;
-run;
-
-proc sort
-    data=FreqCount
-	    out=FreqCount_Desc
-	;
-	by
-	    descending Country
-	;
-run;
-
 proc print
-    data=FreqCount_Desc 
+    data=FreqCountryCount_Desc 
         (obs=5)
 	;
 run;
@@ -151,9 +114,7 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate frequency table for the different 
-FormalEducation Types.
-Use PROC PRINT to print the data
+Methodology:Use PROC PRINT to print the 10 observations
 
 Limitations: Since we have used limited data set 3000 of 64000 results may not 
 be accurate.
@@ -161,25 +122,8 @@ be accurate.
 Possible Follow-up Steps: Bump up the data set and compare with historical data .
 ;
 
-proc freq
-        data=StackO_analytic_file
-    ;
-    tables
-        FormalEducation / out=FreqCount  list
-    ;
-run;
-
-proc sort
-    data=FreqCount
-	    out=FreqCount_Desc
-	;
-	by
-	    descending FormalEducation
-	;
-run;
-
 proc print
-    data=FreqCount_Desc 
+    data=FreqFeCount_Desc 
         (obs=10)
 	;
 run;
