@@ -151,7 +151,7 @@ Use PROC FREQ procedure to generate a frequency table, and use
 PROC SORT to sort the column FormalEducation.
 ;
 proc freq
-        data=StackO_analytic_file
+        data=StackO_analytic_file noprint
     ;
     tables
         FormalEducation / out=FreqFeCount  list
