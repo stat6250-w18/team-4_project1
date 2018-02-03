@@ -102,6 +102,71 @@ proc sort
 run;
 
 
+*
+Use PROC FREQ procedure to generate a frequency table, and use 
+PROC SORT to sort the column DeveloperType.
+;
+proc freq
+        data=StackO_analytic_file noprint
+    ;
+    tables
+        DeveloperType / out=FreqDevCount  list
+    ;
+run;
+
+proc sort
+    data=FreqDevCount
+	    out=FreqDevCount_Desc
+	;
+	by
+	    descending percent
+	;
+run;
+
+
+*
+Use PROC FREQ procedure to generate a frequency table, and use 
+PROC SORT to sort the column Country.
+;
+proc freq
+        data=StackO_analytic_file noprint
+    ;
+    tables
+        Country / out=FreqCountryCount  list
+    ;
+run;
+
+proc sort
+    data=FreqCountryCount
+	    out=FreqCountryCount_Desc
+	;
+	by
+	    descending Country
+	;
+run;
+
+
+*
+Use PROC FREQ procedure to generate a frequency table, and use 
+PROC SORT to sort the column FormalEducation.
+;
+proc freq
+        data=StackO_analytic_file
+    ;
+    tables
+        FormalEducation / out=FreqFeCount  list
+    ;
+run;
+
+proc sort
+    data=FreqFeCount
+	    out=FreqFeCount_Desc
+	;
+	by
+	    descending FormalEducation
+	;
+run;
+
 * build analytic dataset from StackO_raw dataset with the least number of 
 columns(11)and minimal cleaning/transformation needed to address research 
 questions in corresponding data-analysis files;
