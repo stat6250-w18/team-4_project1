@@ -299,7 +299,7 @@ proc freq
 run;
 
 proc sort
-    data=FreqMsjCount
+    data=FreqMajCount
 	    out=FreqMajCount_Desc
 	;
 	by
@@ -350,8 +350,3 @@ proc sort
 	    descending Salary
 	;
 run;
-
-*
-
-
-
