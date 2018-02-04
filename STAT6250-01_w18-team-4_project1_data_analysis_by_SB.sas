@@ -43,9 +43,8 @@ footnote3
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the 
-different version control tools.And use PROC SORT procedure to get the top 5 
-version control tools.
+Methodology: Use PROC PRINT to get top 5 version control tools used by 
+programmers of stack overflow.
 
 Limitations: Since the data is based on a survey, there were many fields that 
 had NA for an answer. Because of that, even NA is one of the top 5 results in 
@@ -54,24 +53,6 @@ the SORT procedure.
 Possible Follow-up Steps: Perhaps applying analysis result on the whole dataset 
 and then find the true results. Better handle the 'NA' values in the next survey.
 ;
-
-proc freq
-        data=StackO_analytic_file
-    ;
-    tables
-        VersionControl / out=FreqCount  list
-    ;
-run;
-
-proc sort
-    	data=FreqCount
-	out=FreqCount_Desc
-	;
-	by
-		descending percent
-	;
-run;
-
 proc print
     data=FreqCount_Desc (obs=5)
 	;
@@ -98,33 +79,14 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the
-professionals. And use PROC SORT procedure to get the frequencies in 
-descending order.
+Methodology: Use PROC PRINT statement to print the list of professionals 
+contributing to stack overflow.
 
 Limitations: Since the data is based on a survey, there were limited options
 available. 
 
 Possible Follow-up Steps: Cleaning the datset to avoid 'NA' values.
 ;
-
-proc freq
-        data=StackO_analytic_file
-    ;
-    table
-    	Professional / out=FreqCount  list
-    ;
-run;
-
-proc sort
-	data=FreqCount
-	out=FreqCount_Desc
-	;
-	by
-		descending percent
-	;
-run;
-
 proc print
 	data=FreqCount_Desc
 	;
@@ -151,9 +113,8 @@ footnote2
 ;
 
 *
-Methodology: Use PROC FREQ procedure to generate a frequency table for the 
-different version control tools. And use PROC SORT procedure to get the top
-5 version control tools.
+Methodology: Use PROC PRINT statement to print the top 5 ranges 
+of programming years of respondents contributing to stack overflow.
 
 Limitations: Since the data is based on a survey, there were many fields 
 that had 'NA' for an answer. Because of that, even 'NA' is one of the top
@@ -162,24 +123,6 @@ that had 'NA' for an answer. Because of that, even 'NA' is one of the top
 Follow-up Steps: A possible follow-up to this approach could be again to 
 carefully avoid the 'NA' values.
 ;
-
-proc freq
-        data=StackO_analytic_file
-    ;
-    table
-    	YearsProgram / out=FreqCount  list
-    ;
-run;
-
-proc sort
-	data=FreqCount
-	out=FreqCount_Desc
-	;
-	by
-		descending percent
-	;
-run;
-
 proc print
 	data=FreqCount_Desc (obs=5)
 	;	
