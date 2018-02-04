@@ -210,7 +210,6 @@ proc sort
 run;
 
 
-
 *
 Creating files that will be used as part of data analysis by AA.
 ;
