@@ -286,4 +286,71 @@ run;
 Creating files that will be used as part of data analysis by DF.
 ;
 
+*
+Use PROC FREQ procedure to generate a frequency table, and use 
+PROC SORT to sort the column MajorUndergrad.
+;
+proc freq
+        data=StackO_analytic_file noprint
+    ;
+    tables
+        MajorUndergrad / out=FreqMajCount  list
+    ;
+run;
 
+proc sort
+    data=FreqMsjCount
+	    out=FreqMajCount_Desc
+	;
+	by
+	    descending percent
+	;
+run;
+
+
+*
+Use PROC FREQ procedure to generate a frequency table, and use 
+PROC SORT to sort the column WantWorkLanguage.
+;
+proc freq
+        data=StackO_analytic_file noprint
+    ;
+    tables
+        WantWorkLanguage / out=FreqWanCount  list
+    ;
+run;
+
+proc sort
+    data=FreqWanCount
+	    out=FreqWanCount_Desc
+	;
+	by
+	    descending WantWorkLanguage
+	;
+run;
+
+
+*
+Use PROC FREQ procedure to generate a frequency table, and use 
+PROC SORT to sort the column Salary.
+;
+proc freq
+        data=StackO_analytic_file noprint
+    ;
+    tables
+        Salary / out=FreqsalaryCount  list
+    ;
+run;
+
+proc sort
+    data=FreqsalaryCount
+	    out=FreqsalaryCount_Desc
+	;
+	by
+	    descending Salary
+	;
+run;
+
+
+
+*
