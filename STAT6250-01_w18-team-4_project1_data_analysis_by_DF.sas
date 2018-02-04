@@ -27,38 +27,30 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 
 
 title1
-'Research Question: What is the top 1 country from where the respondents contributing on stack of flow?'
+'Research Question: What are the top 1 Major who contribute in the survey?'
 ;
 
 title2
-'Rationale: This should help identify the most nationality who take part in the survey.'
+'Rationale: This helps to know what are the most majors which are among in this survey.'
 ;
 
 footnote1
-'Based on the above output, the top  country is Unite States'
+'Math and statistic is the most common majors in the survey' 
 ;
 
 footnote2
-'Moreover, we can see more information to analyze.'
-;
-
-footnote3
-'Further analysis to look for the top 1 formal education level in the respondences who coming from United States'
+'Na should be eliminated.' 
 ;
 
 *
-Methodology: Use PROC PRINT to print just the top country from
-the temporary dataset created in the corresponding data-prep file.
-
-Limitations: This methodology can result the only one country. The purpose for
-the research is not very useful and represtful.
-
-Possible Follow-up Steps: More carefully clean the values of the variable.
+Methodology:Use PROC PRINT to print the 1 observations.
+Limitations: The outcomes should be more precise.
+Possible Follow-up Steps: I need consider more conditions.
 ;
 
 proc print
     data=FreqMajCount_Desc 
-        (obs=3)
+        (obs=1)
 	;
 run;
 title;
@@ -66,39 +58,31 @@ footnote;
 
 
 title1
-'Research Question: How does the distribution of "Major Undergrad" for the first top 1 country to that of top 2 country?'
+'Research Question: Which top 1 are the surveyers want work language ?'
 ;
 
 title2
-'Rationale: This would help inform whether the education level depend on region.'
+'Rationale: This should help identify the people who contribute into the survey most want work language.
 ;
 
 footnote1
-'Based on the above output, top 2 eduation level are "Bachelor" and "some college/university study without earning a bachelors degree", which are 694 and 272 persons.'
+'Sql and Java is the most work language.' 
 ;
 
 footnote2
-'However, there are still lots of data and we need to narrow them and put one more restrict so that conditions looks more details.'
-;
-
-footnote3
-'In addition, we should see the employment status who have a special degree and from a special region.'
+'There should be lots types of languages in the survey.'
 ;
 
 *
-Methodology: Use PROC PRINT to print just the most education level from
-the temporary dataset created in the corresponding data-prep file.
-
-Limitations: This methodology only result respondents' education level.
-The purpose for the research should be considered the employed status 
-as well.
-
-Possible Follow-up Steps: More restricts
+Methodology: Use PROC PRINT to print the 2 observation.
+Limitations: Since we have lots of types of languages, we can not list the number.
+Possible Follow-up Steps: Get some referance from other datasets.
 ;
+
 
 proc print
     data=FreqWanCount_Desc
-        (obs=5)
+        (obs=2)
 	;
 run;
 title;
@@ -107,33 +91,30 @@ footnote;
 
 
 title1
-'Research Question: what's the most employment status who have bachelar degree already and from USA?'
+'Research Question: How much salary do people get who contribute into the survey?'
 ;
 
 title2
-'Rationale: This would help determine what's the most employ status among person who live in USA and having Bachalar degree.'
+'Rationale: This should help identify the people who have high salary.'
 ;
 
 footnote1
-'Based on the above output, 543 records shows that they are full-time employed.'
+'The highest salary who get into is 195000.' 
 ;
 
 footnote2
-'Finally, this survey can help us to identify the respondents educaion and employment status.'
+'There are so many NA values.'
 ;
 
 *
-Methodology: Use PROC PRINT to print just the most employment status base on
-the corresponding temp file.
-
-Limitations: This methodology still can result a lot of redundent.
-
-Possible Follow-up Steps: More restricts
+Methodology: Use PROC PRINT to print the 2 observations
+Limitations: This method can not show general salarys' distribution.
+Possible Follow-up Steps: use some special function to do so .
 ;
 
 proc print
     data=FreqsalaryCount_Desc
-        (obs=10)
+        (obs=2)
 	;
 run;
 title;
