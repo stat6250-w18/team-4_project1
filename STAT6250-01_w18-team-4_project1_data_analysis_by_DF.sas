@@ -57,18 +57,12 @@ Possible Follow-up Steps: More carefully clean the values of the variable.
 ;
 
 proc print
-        noobs
-        data=StackO_analytic_file(obs=1)
-    ;
-    var
-        Major Undergrad
-    ;
-	Where Country="United States"
-    ;
+    data=FreqMajCount_Desc 
+        (obs=3)
+	;
 run;
 title;
 footnote;
-
 
 
 title1
@@ -103,13 +97,8 @@ Possible Follow-up Steps: More restricts
 ;
 
 proc print
-        noobs
-        data=StackO_analytic_file(obs=1)
-    class
-        FormalEducation
-    ;
-    var
-        Country
+    data=FreqWanCount_Desc
+        (obs=5)
 	;
 run;
 title;
@@ -142,17 +131,10 @@ Limitations: This methodology still can result a lot of redundent.
 Possible Follow-up Steps: More restricts
 ;
 
-proc freq
 proc print
-        noobs
-        data=StackO_analytic_file(obs=1)
-    class
-        EmploymentStatus
-    ;
-    var
-        Country
-		FormalEducation
-    ;
+    data=FreqsalaryCount_Desc
+        (obs=10)
+	;
 run;
 title;
 footnote;
