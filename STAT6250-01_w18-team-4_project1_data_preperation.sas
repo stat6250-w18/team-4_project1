@@ -102,6 +102,119 @@ proc sort
 run;
 
 
+* build analytic dataset from StackO_raw dataset with the least number of 
+columns(11)and minimal cleaning/transformation needed to address research 
+questions in corresponding data-analysis files;
+
+data StackO_analytic_file;
+    retain
+        	Respondent
+		MajorUndergrad
+		FormalEducation
+		YearsProgram
+		DeveloperType
+		Professional
+		Country
+		WorkStart
+		HaveworkedLanguage
+		VersionControl
+		Salary
+    ;
+    keep
+       		Respondent
+		MajorUndergrad
+		FormalEducation
+		YearsProgram
+		DeveloperType
+		Professional
+		Country
+		WorkStart
+		HaveworkedLanguage
+		VersionControl
+		Salary
+	;
+    set StackO_raw;
+run;
+
+
+*
+Creating files that will be used as part of data analysis by SB.
+;
+
+*
+Use PROC FREQ procedure to generate a frequency table for the 
+different version control tools.And use PROC SORT procedure to get the top 5 
+version control tools.
+;
+proc freq
+        data=StackO_analytic_file
+    ;
+    tables
+        VersionControl / out=FreqCount  list
+    ;
+run;
+
+proc sort
+    	data=FreqCount
+	out=FreqCount_Desc
+	;
+	by
+		descending percent
+	;
+run;
+
+
+*
+Use PROC FREQ procedure to generate a frequency table for the
+professionals that contribute on stack overflow. And use PROC SORT procedure to get the frequencies in 
+descending order.
+;
+proc freq
+        data=StackO_analytic_file
+    ;
+    table
+    	Professional / out=FreqCount  list
+    ;
+run;
+
+proc sort
+	data=FreqCount
+	out=FreqCount_Desc
+	;
+	by
+		descending percent
+	;
+run;
+
+
+*
+Use PROC FREQ procedure to generate a frequency table for the 
+range of years of programming of professionals on stack overflow. And use PROC SORT procedure to get the top
+5 ranges of programming years.
+;
+proc freq
+        data=StackO_analytic_file
+    ;
+    table
+    	YearsProgram / out=FreqCount  list
+    ;
+run;
+
+proc sort
+	data=FreqCount
+	out=FreqCount_Desc
+	;
+	by
+		descending percent
+	;
+run;
+
+
+
+*
+Creating files that will be used as part of data analysis by AA.
+;
+
 *
 Use PROC FREQ procedure to generate a frequency table, and use 
 PROC SORT to sort the column DeveloperType.
@@ -167,36 +280,10 @@ proc sort
 	;
 run;
 
-* build analytic dataset from StackO_raw dataset with the least number of 
-columns(11)and minimal cleaning/transformation needed to address research 
-questions in corresponding data-analysis files;
 
-data StackO_analytic_file;
-    retain
-        	Respondent
-		MajorUndergrad
-		FormalEducation
-		YearsProgram
-		DeveloperType
-		Professional
-		Country
-		WorkStart
-		HaveworkedLanguage
-		VersionControl
-		Salary
-    ;
-    keep
-       		Respondent
-		MajorUndergrad
-		FormalEducation
-		YearsProgram
-		DeveloperType
-		Professional
-		Country
-		WorkStart
-		HaveworkedLanguage
-		VersionControl
-		Salary
-	;
-    set StackO_raw;
-run;
+
+*
+Creating files that will be used as part of data analysis by DF.
+;
+
+
