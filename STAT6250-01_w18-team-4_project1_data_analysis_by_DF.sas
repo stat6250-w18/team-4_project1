@@ -52,6 +52,7 @@ proc print
     data=FreqMajCount_Desc 
         (obs=1)
 	;
+	
 run;
 title;
 footnote;
@@ -84,6 +85,7 @@ proc print
     data=FreqWanCount_Desc
         (obs=2)
 	;
+	
 run;
 title;
 footnote;
@@ -116,6 +118,7 @@ proc print
     data=FreqsalaryCount_Desc
         (obs=2)
 	;
+	
 run;
 title;
 footnote;
