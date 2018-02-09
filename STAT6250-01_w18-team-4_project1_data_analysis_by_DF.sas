@@ -43,8 +43,10 @@ footnote2
 ;
 
 *
-Methodology:Use PROC PRINT to print the 1 observations.
+Methodology: Use PROC PRINT to print the 1 observations.
+
 Limitations: The outcomes should be more precise.
+
 Possible Follow-up Steps: I need consider more conditions.
 ;
 
@@ -76,7 +78,9 @@ footnote2
 
 *
 Methodology: Use PROC PRINT to print the 2 observation.
+
 Limitations: Since we have lots of types of languages, we can not list the number.
+
 Possible Follow-up Steps: Get some referance from other datasets.
 ;
 
@@ -109,8 +113,10 @@ footnote2
 ;
 
 *
-Methodology: Use PROC PRINT to print the 2 observations
+Methodology: Use PROC PRINT to print the 2 observations.
+
 Limitations: This method can not show general salarys' distribution.
+
 Possible Follow-up Steps: use some special function to do so .
 ;
 
