@@ -38,7 +38,7 @@ footnote1
 'Based on the below output, 5 version control tools have been identified, out of which "git" is used the most.' 
 ;
 
-footnote3
+footnote2
 'However, this is perhaps only a randomly selected sample of 3000 respondents out of 64000.'
 ;
 
@@ -53,9 +53,10 @@ the SORT procedure.
 Possible Follow-up Steps: Perhaps applying analysis result on the whole dataset 
 and then find the true results. Better handle the 'NA' values in the next survey.
 ;
+
 proc print
     data=FreqCount_Desc (obs=5)
-	;
+    ;
 run;
 title;
 footnote;
@@ -87,6 +88,7 @@ available.
 
 Possible Follow-up Steps: Cleaning the datset to avoid 'NA' values.
 ;
+
 proc print
 	data=FreqCount_Desc
 	;
@@ -123,6 +125,7 @@ that had 'NA' for an answer. Because of that, even 'NA' is one of the top
 Follow-up Steps: A possible follow-up to this approach could be again to 
 carefully avoid the 'NA' values.
 ;
+
 proc print
 	data=FreqCount_Desc (obs=5)
 	;	
