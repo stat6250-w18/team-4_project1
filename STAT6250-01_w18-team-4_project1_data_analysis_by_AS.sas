@@ -53,8 +53,7 @@ Possible Follow-up Steps: Better handling of missing data.IF ELSE condition.
 ;
 
 proc print
-    data=FreqDevCount_Desc 
-        (obs=3)
+    data=FreqDevCount_Desc (obs=3)
 	;
 run;
 title;
@@ -88,8 +87,7 @@ Possible Follow-up Steps: Bump up the data set and compare with historical data.
 ;
 
 proc print
-    data=FreqCountryCount_Desc 
-        (obs=5)
+    data=FreqCountryCount_Desc (obs=5)
 	;
 run;
 title;
@@ -123,8 +121,7 @@ Possible Follow-up Steps: Bump up the data set and compare with historical data 
 ;
 
 proc print
-    data=FreqFeCount_Desc 
-        (obs=10)
+    data=FreqFeCount_Desc (obs=10)
 	;
 run;
 title;
