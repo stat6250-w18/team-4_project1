@@ -147,8 +147,7 @@ different version control tools.And use PROC SORT procedure to get the top 5
 version control tools.
 ;
 proc freq
-    data=StackO_analytic_file
-    noprint
+    data=StackO_analytic_file noprint
     ;
     tables
         VersionControl / out=FreqCount  list
@@ -171,8 +170,7 @@ professionals that contribute on stack overflow. And use PROC SORT procedure to 
 descending order.
 ;
 proc freq
-    data=StackO_analytic_file
-    noprint
+    data=StackO_analytic_file noprint
     ;
     table
         Professional / out=FreqCount  list
@@ -195,8 +193,7 @@ range of years of programming of professionals on stack overflow. And use PROC S
 5 ranges of programming years.
 ;
 proc freq
-    data=StackO_analytic_file
-    noprint
+    data=StackO_analytic_file noprint
     ;
     table
         YearsProgram / out=FreqCount  list
