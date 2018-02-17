@@ -80,9 +80,9 @@ footnote2
 *
 Methodology: Use PROC PRINT to print the 2 observation.
 
-Limitations: Since we have lots of types of languages, we can not list the number.
+Limitations: Since we have lots of types of languages, we can not list the 
 
-Possible Follow-up Steps: Get some referance from other datasets.
+number.Possible Follow-up Steps: Get some referance from other datasets.
 ;
 
 proc print
