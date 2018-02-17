@@ -66,7 +66,7 @@ title1
 ;
 
 title2
-'Rationale: This should help identify the people who contribute into the survey most want work language.
+'Rationale: This should help identify the people who contribute into the survey most want work language.'
 ;
 
 footnote1
