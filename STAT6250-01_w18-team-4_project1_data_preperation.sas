@@ -309,13 +309,13 @@ run;
 
 *
 Use PROC FREQ procedure to generate a frequency table, and use 
-PROC SORT to sort the column WantWorkLanguage.
+PROC SORT to sort the column HaveworkedLanguage.
 ;
 proc freq
         data=StackO_analytic_file noprint
     ;
     tables
-        WantWorkLanguage / out=FreqWanCount  list
+        HaveworkedLanguage / out=FreqWanCount  list
     ;
 run;
 
@@ -324,7 +324,7 @@ proc sort
 	    out=FreqWanCount_Desc
 	;
 	by
-	    descending WantWorkLanguage
+	    descending HaveworkedLanguage
 	;
 run;
 
