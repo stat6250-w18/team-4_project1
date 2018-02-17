@@ -324,7 +324,7 @@ proc sort
 	    out=FreqWanCount_Desc
 	;
 	by
-	    descending HaveworkedLanguage
+	    descending percent
 	;
 run;
 
@@ -346,6 +346,6 @@ proc sort
 	    out=FreqsalaryCount_Desc
 	;
 	by
-	    descending Salary
+	    descending percent
 	;
 run;
