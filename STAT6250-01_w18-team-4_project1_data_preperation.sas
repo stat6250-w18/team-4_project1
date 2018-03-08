@@ -150,13 +150,13 @@ proc freq
     data=StackO_analytic_file noprint
     ;
     tables
-        VersionControl / out=FreqCount  list
+        VersionControl / out=FreqVCTCount  list
     ;
 run;
 
 proc sort
-    data=FreqCount
-    out=FreqCount_Desc
+    data=FreqVCTCount
+    out=FreqVCTCount_Desc
     ;
     by
         descending percent
@@ -173,13 +173,13 @@ proc freq
     data=StackO_analytic_file noprint
     ;
     table
-        Professional / out=FreqCount  list
+        Professional / out=FreqPROFCount  list
     ;
 run;
 
 proc sort
-    data=FreqCount
-    out=FreqCount_Desc
+    data=FreqPROFCount
+    out=FreqPROFCount_Desc
     ;
     by
         descending percent
@@ -196,13 +196,13 @@ proc freq
     data=StackO_analytic_file noprint
     ;
     table
-        YearsProgram / out=FreqCount  list
+        YearsProgram / out=FreqPYCount  list
     ;
 run;
 
 proc sort
-    data=FreqCount
-    out=FreqCount_Desc
+    data=FreqPYCount
+    out=FreqPYCount_Desc
     ;
     by
         descending percent
