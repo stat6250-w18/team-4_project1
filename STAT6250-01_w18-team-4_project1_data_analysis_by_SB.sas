@@ -22,7 +22,7 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 
 
 * load external file that generates analytic dataset stack overflow refined dataset;
-%include '.\STAT6250-01_w18-team-4_project1_data_preparation.sas';
+%include '.\STAT6250-01_w18-team-4_project1_data_preperation.sas';
 
 
 
@@ -55,7 +55,7 @@ and then find the true results. Better handle the 'NA' values in the next survey
 ;
 
 proc print
-    data=FreqCount_Desc (obs=5)
+    data=FreqVCTCount_Desc (obs=5)
     ;
 run;
 title;
@@ -76,7 +76,7 @@ footnote1
 ;
 
 footnote2
-'Moreover, there are a lot of 'NA' values, which hinders the results of the analysis. And makes it difficult to take right business decisions.'
+'Moreover, there are a lot of "NA" values, which hinders the results of the analysis. And makes it difficult to take right business decisions.'
 ;
 
 *
@@ -90,7 +90,7 @@ Possible Follow-up Steps: Cleaning the datset to avoid 'NA' values.
 ;
 
 proc print
-	data=FreqCount_Desc
+	data=FreqPROFCount_Desc
 	;
 run;
 title;
@@ -127,7 +127,7 @@ carefully avoid the 'NA' values.
 ;
 
 proc print
-	data=FreqCount_Desc (obs=5)
+	data=FreqPYCount_Desc (obs=5)
 	;	
 run;
 title;
